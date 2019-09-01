@@ -31,32 +31,7 @@
 
 
 
-<script>
-let levelInput = document.getElementById("level");
-let tempInput = document.getElementById("temp");
-let flowInput = document.getElementById("flow");
-let powerInput = document.getElementById("power");
-let fromFlowButton = document.getElementById("from_flow");
-let fromPowerButton = document.getElementById("from_power");
 
-let fuelValue = 0.59;
-
-fromFlowButton.addEventListener("click", function() {
-  let temp = tempInput.value;
-  let flow = flowInput.value;
-  let efficiency = levelInput.value;
-  let k = (fuelValue * efficiency * 100 * (temp - 15)) / (1000 - 15);
-  powerInput.value = k * flow / 1000;
-})
-
-fromPowerButton.addEventListener("click", function() {
-  let temp = tempInput.value;
-  let power = powerInput.value;
-  let efficiency = levelInput.value;
-  let k = (fuelValue * efficiency * 100 * (temp - 15)) / (1000 - 15);
-  flowInput.value = power * 1000 / k;
-})
-</script>
 
 -->
 
@@ -115,13 +90,13 @@ fromPowerButton.addEventListener("click", function() {
     </td>
     <td class="tg-q69o">Flow [/s]:</td>
     <td class="tg-q69o">
-      <input id="flow" value="60"><button id="from_flow">Go!</button>
+      <input id="flow" value="60">
     </td>
   </tr>
   <tr>
     <td class="tg-q69o">Power (MW):</td>
     <td class="tg-q69o">
-      <input id="power"><button id="from_power">Go!</button>
+      <input id="power">
     </td>
     <td class="tg-q69o">Power (MW):</td>
     <td class="tg-q69o">
@@ -131,7 +106,32 @@ fromPowerButton.addEventListener("click", function() {
 </table>
 
 
+<script>
+let levelInput = document.getElementById("level");
+let tempInput = document.getElementById("temp");
+let flowInput = document.getElementById("flow");
+let powerInput = document.getElementById("power");
+let fromFlowButton = document.getElementById("from_flow");
+let fromPowerButton = document.getElementById("from_power");
 
+let fuelValue = 0.59;
+
+fromFlowButton.addEventListener("click", function() {
+  let temp = tempInput.value;
+  let flow = flowInput.value;
+  let efficiency = levelInput.value;
+  let k = (fuelValue * efficiency * 100 * (temp - 15)) / (1000 - 15);
+  powerInput.value = k * flow / 1000;
+})
+
+fromPowerButton.addEventListener("click", function() {
+  let temp = tempInput.value;
+  let power = powerInput.value;
+  let efficiency = levelInput.value;
+  let k = (fuelValue * efficiency * 100 * (temp - 15)) / (1000 - 15);
+  flowInput.value = power * 1000 / k;
+})
+</script>
 
 
 
