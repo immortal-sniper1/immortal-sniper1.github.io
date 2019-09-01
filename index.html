@@ -1,0 +1,56 @@
+<table>
+  <tr>
+    <td>Turbine level:</td>
+    <td>
+      <select id="level">
+        <option value="0.85" selected>Level 1</option>
+        <option value="1">Level 2</option>
+        <option value="1.35">Level 3</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>Temperature:</td>
+    <td><input id="temp" value="500"></td>
+  </tr>
+  <tr>
+    <td>Flow [/s]:</td>
+    <td><input id="flow" value="60"><button id="from_flow">Go!</button></td>
+  </tr>
+  <tr>
+    <td>Power (MW):</td>
+    <td><input id="power"><button id="from_power">Go!</button></td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+let levelInput = document.getElementById("level");
+let tempInput = document.getElementById("temp");
+let flowInput = document.getElementById("flow");
+let powerInput = document.getElementById("power");
+let fromFlowButton = document.getElementById("from_flow");
+let fromPowerButton = document.getElementById("from_power");
+
+let fuelValue = 0.59;
+
+fromFlowButton.addEventListener("click", function() {
+	let temp = tempInput.value;
+  let flow = flowInput.value;
+  let efficiency = levelInput.value;
+  let k = (fuelValue * efficiency * 100 * (temp - 15)) / (1000 - 15);
+  powerInput.value = k * flow / 1000;
+})
+
+fromPowerButton.addEventListener("click", function() {
+	let temp = tempInput.value;
+  let power = powerInput.value;
+  let efficiency = levelInput.value;
+  let k = (fuelValue * efficiency * 100 * (temp - 15)) / (1000 - 15);
+  flowInput.value = power * 1000 / k;
+})
