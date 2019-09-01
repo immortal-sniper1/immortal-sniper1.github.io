@@ -1,11 +1,16 @@
+
+
+
+
+
 <table>
   <tr>
     <td>Turbine level:</td>
     <td>
       <select id="level">
-        <option value="0.85" selected>Level 1</option>
-        <option value="1">Level 2</option>
-        <option value="1.35">Level 3</option>
+        <option value="0.85" selected>Level 1 <img src="icons/gas-turbinemk01.png"   height="32" width="32"> </option>
+        <option value="1">Level 2  <img src="icons/gas-turbinemk02.png"   height="32" width="32"></option>
+        <option value="1.35">Level 3  <img src="icons/gas-turbinemk03.png"   height="32" width="32"></option>
       </select>
     </td>
   </tr>
@@ -28,6 +33,47 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<table>
+  <tr>
+    <td>Turbine level:</td>
+    <td>
+      <select id="level">
+        <option value="0.85" selected>Level 1 <img src="icons/gas-turbinemk01.png"   height="32" width="32"> </option>
+        <option value="1">Level 2  <img src="icons/gas-turbinemk02.png"   height="32" width="32"></option>
+        <option value="1.35">Level 3  <img src="icons/gas-turbinemk03.png"   height="32" width="32"></option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>Temperature:</td>
+    <td><input id="temp" value="500"></td>
+  </tr>
+  <tr>
+    <td>Flow [/s]:</td>
+    <td><input id="flow" value="60"><button id="from_flow">Go!</button></td>
+  </tr>
+  <tr>
+    <td>Power (MW):</td>
+    <td><input id="power"><button id="from_power">Go!</button></td>
+  </tr>
+</table>
+
+ 
+
+
+ 
 
 
 let levelInput = document.getElementById("level");
