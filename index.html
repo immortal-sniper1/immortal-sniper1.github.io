@@ -3,37 +3,7 @@
 <body>
 
 
-<!--   
-<table>
-  <tr>
-    <td>Turbine level:</td>
-    <td>
-      <select id="level">
-        <option value="0.85" selected>Level 1 <img src="icons/gas-turbinemk01.png"   height="32" width="32"> </option>
-        <option value="1">Level 2  <img src="icons/gas-turbinemk02.png"   height="32" width="32"></option>
-        <option value="1.35">Level 3  <img src="icons/gas-turbinemk03.png"   height="32" width="32"></option>
-      </select>
-    </td>
-  </tr>
-  <tr>
-    <td>Temperature:</td>
-    <td><input id="temp" value="500"></td>
-  </tr>
-  <tr>
-    <td>Flow [/s]:</td>
-    <td><input id="flow" value="60"><button id="from_flow">Go!</button></td>
-  </tr>
-  <tr>
-    <td>Power (MW):</td>
-    <td><input id="power"><button id="from_power">Go!</button></td>
-  </tr>
-</table>
 
-
-
-
-
--->
 
 
 
@@ -54,19 +24,19 @@
     <td class="tg-q69o">   
 
        <select id="level">
-        <option value="0.85" selected>Level 1 <img src="icons/gas-turbinemk01.png"   height="32" width="32"> </option>
-        <option value="1">Level 2  <img src="icons/gas-turbinemk02.png"   height="32" width="32"></option>
-        <option value="1.35">Level 3  <img src="icons/gas-turbinemk03.png"   height="32" width="32"></option>
+        <option value="0.42" selected>Level 1 </option>
+        <option value="0.95">Level 2 </option>
+        <option value="1.47">Level 3 </option>
       </select>
 
     </td>
     <td class="tg-q69o">Turbine level:</td>
     <td class="tg-q69o">
 
-            <select id="level">
-        <option value="0.85" selected>Level 1 <img src="icons/gas-turbinemk01.png"   height="32" width="32"> </option>
-        <option value="1">Level 2  <img src="icons/gas-turbinemk02.png"   height="32" width="32"></option>
-        <option value="1.35">Level 3  <img src="icons/gas-turbinemk03.png"   height="32" width="32"></option>
+            <select id="level2">
+        <option value="0.42" selected>Level 1 </option>
+        <option value="0.95">Level 2 </option>
+        <option value="1.47">Level 3 </option>
       </select>
       
 
@@ -80,7 +50,7 @@
     </td>
     <td class="tg-q69o">Temperature:</td>
     <td class="tg-q69o">
-      <input id="temp" value="500">
+      <input id="temp2" value="500">
     </td>
   </tr>
   <tr>
@@ -90,7 +60,7 @@
     </td>
     <td class="tg-q69o">Flow [/s]:</td>
     <td class="tg-q69o">
-      <input id="flow" value="60">
+      <input id="flow2" value="60">
     </td>
   </tr>
   <tr>
@@ -100,11 +70,13 @@
     </td>
     <td class="tg-q69o">Power (MW):</td>
     <td class="tg-q69o">
-      <input id="power"><button id="from_power">Go!</button>
+      <input id="power2"><button id="from_power">Go!</button>
     </td>
   </tr>
 </table>
 
+
+<!--   
 
 <script>
 let levelInput = document.getElementById("level");
@@ -124,7 +96,7 @@ fromFlowButton.addEventListener("click", function() {
   powerInput.value = k * flow / 1000;
 })
 
-fromPowerButton.addEventListener("click", function() {
+fromPowerButton2.addEventListener("click", function() {
   let temp = tempInput.value;
   let power = powerInput.value;
   let efficiency = levelInput.value;
@@ -132,6 +104,49 @@ fromPowerButton.addEventListener("click", function() {
   flowInput.value = power * 1000 / k;
 })
 </script>
+-->
+
+
+
+
+
+<script type="text/javascript">
+  //flow to power
+
+let levelInput = document.getElementById("level");
+let tempInput = document.getElementById("temp");
+let flowInput = document.getElementById("flow");
+let powerInput = document.getElementById("power");
+let fromFlowButton = document.getElementById("from_flow");
+
+fromFlowButton.addEventListener("click", function() {
+  let temp = tempInput.value;
+  let flow = flowInput.value;
+  let efficiency = levelInput.value;
+  let k =  efficiency  * (temp - 15) * flow;
+  powerInput.value = k  / 1000;
+})
+</script>
+
+<script type="text/javascript">
+  //flow to power
+
+let levelInput = document.getElementById("level2");
+let tempInput = document.getElementById("temp2");
+let flowInput = document.getElementById("flow2");
+let powerInput = document.getElementById("power2");
+let fromFlowButton = document.getElementById("from_flow2");
+
+
+fromPowerButton2.addEventListener("click", function() {
+  let temp = tempInput.value;
+  let power = powerInput.value;
+  let efficiency = levelInput.value;
+  let k = (fuelValue * efficiency * 100 * (temp - 15)) / (1000 - 15);
+  flowInput.value = power * 1000 / k;
+})
+</script>
+
 
 
 
