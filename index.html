@@ -126,24 +126,24 @@ fromFlowButton.addEventListener("click", function() {
   let k =  efficiency  * (temp - 15) * flow;
   powerInput.value = k  / 1000;
 })
-</script>
 
-<script type="text/javascript">
+
+
   //flow to power
 
-let levelInput = document.getElementById("level2");
-let tempInput = document.getElementById("temp2");
-let flowInput = document.getElementById("flow2");
-let powerInput = document.getElementById("power2");
-let fromFlowButton = document.getElementById("from_flow2");
+let levelInput2 = document.getElementById("level2");
+let tempInput2 = document.getElementById("temp2");
+let flowInput2 = document.getElementById("flow2");
+let powerInput2 = document.getElementById("power2");
+let fromFlowButton2 = document.getElementById("from_flow2");
 
 
 fromPowerButton2.addEventListener("click", function() {
-  let temp = tempInput.value;
-  let power = powerInput.value;
-  let efficiency = levelInput.value;
-  let k = (fuelValue * efficiency * 100 * (temp - 15)) / (1000 - 15);
-  flowInput.value = power * 1000 / k;
+  let temp2 = tempInput2.value;
+  let power2 = powerInput2.value;
+  let efficiency2 = levelInput2.value;
+  
+  flowInput.value2 = power * 1000 / efficiency2/(temp2 - 15);
 })
 </script>
 
