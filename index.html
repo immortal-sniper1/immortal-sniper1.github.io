@@ -150,6 +150,11 @@ fromPowerButton2.addEventListener("click", function() {
 
 
 
+
+
+
+
+
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
@@ -167,7 +172,7 @@ fromPowerButton2.addEventListener("click", function() {
   </tr>
   <tr>
     <td class="tg-v76b"><img src="icons/combustion-hydrogen.png"></td>
-    <td class="tg-v76b">520</td>
+    <td class="tg-v76b">520&#176;C</td>
     <td class="tg-v76b"></td>
     <td class="tg-v76b"></td>
   </tr>
@@ -209,6 +214,100 @@ fromPowerButton2.addEventListener("click", function() {
   </tr>
 </table>
 
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-v76b{font-size:22px;font-family:"Times New Roman", Times, serif !important;;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-in7a{font-size:22px;font-family:"Times New Roman", Times, serif !important;;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-v76b">temperature</th>
+    <th class="tg-v76b">1000&#176;C</th>
+    <th class="tg-v76b">2000&#176;C</th>
+    <th class="tg-v76b">30000&#176;C</th>
+    <th class="tg-v76b">4000&#176;C</th>
+    <th class="tg-in7a">5000&#176;C</th>
+  </tr>
+  <tr>
+    <td class="tg-v76b">flow</td>
+    <td class="tg-v76b"><input id="f1" value="0">/[s]</td>
+    <td class="tg-v76b"><input id="f2" value="0">/[s]</td>
+    <td class="tg-v76b"><input id="f3" value="0">/[s]</td>
+    <td class="tg-v76b"><input id="f4" value="0">/[s]</td>
+    <td class="tg-in7a"><input id="f5" value="0">/[s]</td>
+  </tr>
+  <tr>
+    <td class="tg-v76b">productivity?<br></td>
+    <td class="tg-v76b">  
+      <select id="a1">
+        <option value="1.4" selected>YES all 4 prod3 </option>
+        <option value="1">none </option>
+      </select><br></td>
+    <td class="tg-v76b">
+          <select id="a2">
+        <option value="1.4" selected>YES all 4 prod3 </option>
+        <option value="1">none </option>
+      </select></td>
+    <td class="tg-v76b">    
+     <select id="a3">
+        <option value="1.4" selected>YES all 4 prod3 </option>
+        <option value="1">none </option>
+      </select></td>
+    <td class="tg-v76b">   
+      <select id="a4">
+        <option value="1.4" selected>YES all 4 prod3 </option>
+        <option value="1">none </option>
+      </select></td>
+    <td class="tg-in7a">   
+      <select id="a5">
+        <option value="1.4" selected>YES all 4 prod3 </option>
+        <option value="1">none </option>
+      </select></td>
+  </tr>
+  <tr>
+    <td class="tg-v76b">power produced:</td>
+    <td class="tg-v76b" colspan="5"><input id="powerOFfusion" value="0"><button id="FE_power">Go!</button></td>
+  </tr>
+</table>
+
+
+<script type="text/javascript">
+  
+let f1 = document.getElementById("f1");
+let f2 = document.getElementById("f2");
+let f3 = document.getElementById("f3");
+let f4 = document.getElementById("f4");
+let f5 = document.getElementById("f5");
+let a1 = document.getElementById("a1");
+let a2 = document.getElementById("a2");
+let a3 = document.getElementById("a3");
+let a4 = document.getElementById("a4");
+let a5 = document.getElementById("a5");
+
+
+function powerr(p1, p2,tempp) {
+  return p1 * p2*1.5*(tempp-15);   
+}
+
+
+
+powerOFfusion.addEventListener("click", function() {
+  
+  let TotalPower = powerr(f1 ,a1 ,1000)+powerr(f2 ,a2 ,2000)+powerr(f3 ,a3 ,3000)+powerr(f4 ,a4 ,4000)+powerr(f5 ,a5 ,5000);
+})
+
+</script>
 
 
 </body>
