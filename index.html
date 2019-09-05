@@ -328,16 +328,17 @@ fromPowerButton2.addEventListener("click", function() {
 
 <script type="text/javascript">
   
-let f1 = document.getElementById("f1");
-let f2 = document.getElementById("f2");
-let f3 = document.getElementById("f3");
-let f4 = document.getElementById("f4");
-let f5 = document.getElementById("f5");
-let a1 = document.getElementById("a1");
-let a2 = document.getElementById("a2");
-let a3 = document.getElementById("a3");
-let a4 = document.getElementById("a4");
-let a5 = document.getElementById("a5");
+let ff1 = document.getElementById("f1");
+let ff2 = document.getElementById("f2");
+let ff3 = document.getElementById("f3");
+let ff4 = document.getElementById("f4");
+let ff5 = document.getElementById("f5");
+let aa1 = document.getElementById("a1");
+let aa2 = document.getElementById("a2");
+let aa3 = document.getElementById("a3");
+let aa4 = document.getElementById("a4");
+let aa5 = document.getElementById("a5");
+let powerOfFusionn =  document.getElementById("powerOFfusion");
 
 
 function powerr(p1, p2,tempp) {
@@ -346,9 +347,10 @@ function powerr(p1, p2,tempp) {
 
 
 
-powerOFfusion.addEventListener("click", function() {
+powerOfFusionn.addEventListener("click", function() {
   
-  let TotalPower = powerr(f1 ,a1 ,1000)+powerr(f2 ,a2 ,2000)+powerr(f3 ,a3 ,3000)+powerr(f4 ,a4 ,4000)+powerr(f5 ,a5 ,5000);
+  let TotalPower = powerr(ff1 ,aa1 ,1000)+powerr(ff2 ,aa2 ,2000)+powerr(ff3 ,aa3 ,3000)+powerr(ff4 ,aa4 ,4000)+powerr(ff5 ,aa5 ,5000);
+  powerOFfusionn.value = TotalPower/1000;
 })
 
 </script>
