@@ -23,7 +23,7 @@
     <td class="tg-q69o">Turbine level:</td>
     <td class="tg-q69o">   
 
-       <select id="turbine1">
+       <select id="level">
         <option value="0.42" selected>Level 1 </option>
         <option value="0.95">Level 2 </option>
         <option value="1.47">Level 3 </option>
@@ -33,7 +33,7 @@
     <td class="tg-q69o">Turbine level:</td>
     <td class="tg-q69o">
 
-            <select id="turbine2">
+            <select id="level2">
         <option value="0.42" selected>Level 1 </option>
         <option value="0.95">Level 2 </option>
         <option value="1.47">Level 3 </option>
@@ -66,26 +66,58 @@
   <tr>
     <td class="tg-q69o">Power (MW):</td>
     <td class="tg-q69o">
-      <input id="power">
+      <input id="power"><button id="from_power">Go!</button>
     </td>
     <td class="tg-q69o">Power (MW):</td>
     <td class="tg-q69o">
-      <input id="power2"><button id="from_power">Go!</button>
+      <input id="power2"><button id="from_powere">BROKEN ATM USE TABLE ON THE LEFT</button>
     </td>
   </tr>
 </table>
 
 
-
-
-
 <script type="text/javascript">
   
-let turbine1 = document.getElementById("turbine1");
-let turbine2 = document.getElementById("turbine2");
+
+let levelInput = document.getElementById("level");
+let tempInput = document.getElementById("temp");
+let flowInput = document.getElementById("flow");
+let powerInput = document.getElementById("power");
+let fromFlowButton = document.getElementById("from_flow");
+let fromPowerButton = document.getElementById("from_power");
+
+let fuelValue = 1;
+
+fromFlowButton.addEventListener("click", function() {
+  let temp = tempInput.value;
+  let flow = flowInput.value;
+  let efficiency = levelInput.value;
+  let k = fuelValue * efficiency * (temp - 15);
+  powerInput.value = k * flow / 1000;
+})
+
+fromPowerButton.addEventListener("click", function() {
+  let temp = tempInput.value;
+  let power = powerInput.value;
+  let efficiency = levelInput.value;
+  let k = fuelValue * efficiency * (temp - 15);
+  flowInput.value = power * 1000 / k;
+})
+
+
+
+</script>
+
+
+
+<!--
+<script type="text/javascript">
+  
+let turbin1 = document.getElementById("turbine1");
+let turbin2 = document.getElementById("turbine2");
 let flow_in = document.getElementById("flow");
-let temp1 = document.getElementById("temp");
-let temp2 = document.getElementById("temp2");
+let temp11 = document.getElementById("temp");
+let temp21 = document.getElementById("temp2");
 let power2 = document.getElementById("power2");
 let power_from_flow = document.getElementById("from_flow");
 let flow_from_power = document.getElementById("from_power");
@@ -94,29 +126,30 @@ let power_out = document.getElementById("power");
 
 power_from_flow.addEventListener("click",function()
 {
-  let turbine1=turbine1.value;
+  let turbin1=turbin1.value;
   let flow_in=flow_in.value;
   let temp1=temp1.value;
 
- let power_out=turbine1*flow_in*(temp1-15)/1000;
+ let power_out=turbine1*flow_in*(temp11-15)/1000;
+ document.getElementById('power_out')
 })
 
 
 
 flow_from_power.addEventListener("click",function()
 {
-  let turbine2=turbine2.value;
+  let turbin2=turbin2.value;
   let power2=power2.value;
   let temp2=temp2.value;
 
 
-  flow_from_power.value = power2 * 1000 / turbine2/(temp2 - 15);
+  flow_from_power.value = power2 * 1000 / turbine2/(temp21 - 15);
 })
 
 </script>
 
 
-
+-->
 
 <!--
 --------------------------------------------------
