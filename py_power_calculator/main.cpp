@@ -58,6 +58,34 @@ schaltear()
 
 };
 
+akame()
+{
+    int j,k[6],f;
+    double P,b;
+
+
+    P=0;
+for (int i = 1; i < 6; i++)
+{
+  cout<< "for the temperature of "<<i<<"000 C"<<endl;
+  cout<<" flow =";
+  cin>>f;
+  cout<<endl;
+  cout<<"productivity modules?  1 for no   2 for all 4 mk3 productivity"<<endl;
+  cin>>b;
+  if (b!=1)
+  {
+      b=1.4;
+  }
+
+P=P+i*(1000-15)*1.5*b*f;
+}
+
+cout<<"THE TOTAL POWER IS "<<P/1000<<" MW";
+cin>>b;
+
+};
+
 
 
 int main()
@@ -65,7 +93,8 @@ int main()
     int  a;
     cout<< "HI WELCOME TO THE PY TURBINE POWER CALCULATOR!" << endl;
     cout<< "ENTER 1 IF YOU WANT TO CALCULATE POWER WITH TEMPERATURE INPUT AND FLOW OR," << endl;
-    cout<< "2 IF YOU WANT TOCALCULATE THE FLOW NEEDED FROR A GIVEN POWER AND A GIVEN TEMPERATURE" << endl;
+    cout<< "2 IF YOU WANT TO CALCULATE THE FLOW NEEDED FROR A GIVEN POWER AND A GIVEN TEMPERATURE" << endl;
+    cout<< "3 IF YOU WANT TO CALCULATE THE POWER PRODUCED BY A FUSION ARRAY" << endl;
     cout<< "entered number=";
     cin>>a;
     cout<<endl;
@@ -74,6 +103,8 @@ int main()
         case 1: hyurimaru();
             break;
         case 2: schaltear();
+            break;
+        case 3: akame();
             break;
         default : cout<<"wrong input!"<<endl;
     };
