@@ -76,39 +76,37 @@
 </table>
 
 
-<!--   
 
-<script>
-let levelInput = document.getElementById("level");
-let tempInput = document.getElementById("temp");
-let flowInput = document.getElementById("flow");
-let powerInput = document.getElementById("power");
-let fromFlowButton = document.getElementById("from_flow");
-let fromPowerButton = document.getElementById("from_power");
 
-let fuelValue = 0.59;
+------------------------------------
 
-fromFlowButton.addEventListener("click", function() {
-  let temp = tempInput.value;
-  let flow = flowInput.value;
-  let efficiency = levelInput.value;
-  let k = (fuelValue * efficiency * 100 * (temp - 15)) / (1000 - 15);
-  powerInput.value = k * flow / 1000;
+<script type="text/javascript">
+  
+let turbine1 = document.getElementById("level");
+let turbine2 = document.getElementById("level2");
+let flow_in = document.getElementById("flow");
+let temp1 = document.getElementById("temp");
+let temp2 = document.getElementById("temp2");
+let power2 = document.getElementById("power2");
+let power_from_flow = document.getElementById("from_flow");
+let flow_from_power = document.getElementById("from_power");
+let power_out = document.getElementById("power");
+
+
+power_from_flow.addEventListener("click",function()
+{
+ let power_out=turbine1*flow_in*(temp1-15)/1000;
 })
 
-fromPowerButton2.addEventListener("click", function() {
-  let temp = tempInput.value;
-  let power = powerInput.value;
-  let efficiency = levelInput.value;
-  let k = (fuelValue * efficiency * 100 * (temp - 15)) / (1000 - 15);
-  flowInput.value = power * 1000 / k;
-})
+
+
 </script>
--->
 
 
 
 
+<!--
+--------------------------------------------------
 
 <script type="text/javascript">
   //flow to power
@@ -129,13 +127,13 @@ fromFlowButton.addEventListener("click", function() {
 
 
 
-  //flow to power
+  //power to flow
 
 let levelInput2 = document.getElementById("level2");
 let tempInput2 = document.getElementById("temp2");
 let flowInput2 = document.getElementById("flow2");
 let powerInput2 = document.getElementById("power2");
-let fromFlowButton2 = document.getElementById("from_flow2");
+let fromFlowButton2 = document.getElementById("from_power");
 
 
 fromPowerButton2.addEventListener("click", function() {
@@ -149,7 +147,7 @@ fromPowerButton2.addEventListener("click", function() {
 
 
 
-
+-->
 
 
 
