@@ -110,95 +110,6 @@ fromPowerButton.addEventListener("click", function() {
 
 
 
-<!--
-<script type="text/javascript">
-  
-let turbin1 = document.getElementById("turbine1");
-let turbin2 = document.getElementById("turbine2");
-let flow_in = document.getElementById("flow");
-let temp11 = document.getElementById("temp");
-let temp21 = document.getElementById("temp2");
-let power2 = document.getElementById("power2");
-let power_from_flow = document.getElementById("from_flow");
-let flow_from_power = document.getElementById("from_power");
-let power_out = document.getElementById("power");
-
-
-power_from_flow.addEventListener("click",function()
-{
-  let turbin1=turbin1.value;
-  let flow_in=flow_in.value;
-  let temp1=temp1.value;
-
- let power_out=turbine1*flow_in*(temp11-15)/1000;
- document.getElementById('power_out')
-})
-
-
-
-flow_from_power.addEventListener("click",function()
-{
-  let turbin2=turbin2.value;
-  let power2=power2.value;
-  let temp2=temp2.value;
-
-
-  flow_from_power.value = power2 * 1000 / turbine2/(temp21 - 15);
-})
-
-</script>
-
-
--->
-
-<!--
---------------------------------------------------
-
-<script type="text/javascript">
-  //flow to power
-
-let levelInput = document.getElementById("level");
-let tempInput = document.getElementById("temp");
-let flowInput = document.getElementById("flow");
-let powerInput = document.getElementById("power");
-let fromFlowButton = document.getElementById("from_flow");
-
-fromFlowButton.addEventListener("click", function() {
-  let temp = tempInput.value;
-  let flow = flowInput.value;
-  let efficiency = levelInput.value;
-  let k =  efficiency  * (temp - 15) * flow;
-  powerInput.value = k  / 1000;
-})
-
-
-
-  //power to flow
-
-let levelInput2 = document.getElementById("level2");
-let tempInput2 = document.getElementById("temp2");
-let flowInput2 = document.getElementById("flow2");
-let powerInput2 = document.getElementById("power2");
-let fromFlowButton2 = document.getElementById("from_power");
-
-
-fromPowerButton2.addEventListener("click", function() {
-  let temp2 = tempInput2.value;
-  let power2 = powerInput2.value;
-  let efficiency2 = levelInput2.value;
-  
-  flowInput.value2 = power * 1000 / efficiency2/(temp2 - 15);
-})
-</script>
-
-
-
--->
-
-
-
-
-
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
@@ -279,7 +190,7 @@ fromPowerButton2.addEventListener("click", function() {
     <th class="tg-v76b">temperature</th>
     <th class="tg-v76b">1000&#176;C</th>
     <th class="tg-v76b">2000&#176;C</th>
-    <th class="tg-v76b">30000&#176;C</th>
+    <th class="tg-v76b">3000&#176;C</th>
     <th class="tg-v76b">4000&#176;C</th>
     <th class="tg-in7a">5000&#176;C</th>
   </tr>
