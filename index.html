@@ -195,7 +195,7 @@ fromPowerButton.addEventListener("click", function() {
     <th class="tg-in7a">5000&#176;C</th>
   </tr>
   <tr>
-    <td class="tg-v76b">flow</td>
+    <td class="tg-v76b">flow of critical steam</td>
     <td class="tg-v76b"><input id="f1" value="0">/[s]</td>
     <td class="tg-v76b"><input id="f2" value="0">/[s]</td>
     <td class="tg-v76b"><input id="f3" value="0">/[s]</td>
@@ -206,27 +206,26 @@ fromPowerButton.addEventListener("click", function() {
     <td class="tg-v76b">productivity?<br></td>
     <td class="tg-v76b">  
       <select id="a1">
-        <option value="1.4" selected>YES all 4 prod3 </option>
         <option value="1">none </option>
       </select><br></td>
     <td class="tg-v76b">
           <select id="a2">
-        <option value="1.4" selected>YES all 4 prod3 </option>
+
         <option value="1">none </option>
       </select></td>
     <td class="tg-v76b">    
      <select id="a3">
-        <option value="1.4" selected>YES all 4 prod3 </option>
+
         <option value="1">none </option>
       </select></td>
     <td class="tg-v76b">   
       <select id="a4">
-        <option value="1.4" selected>YES all 4 prod3 </option>
+
         <option value="1">none </option>
       </select></td>
     <td class="tg-in7a">   
       <select id="a5">
-        <option value="1.4" selected>YES all 4 prod3 </option>
+
         <option value="1">none </option>
       </select></td>
   </tr>
@@ -253,7 +252,7 @@ let aa5 = document.getElementById("a5");
 let powerOfFusionButton =  document.getElementById("FE_power");
 let powerOfFusionn =  document.getElementById("powerOFfusion");
 function powerr(p1, p2,tempp) {
-  return p1 * p2*1.5*(tempp-15);   
+  return p1 * p2*1.5*2*(tempp-15);   
 }
 powerOfFusionButton.addEventListener("click", function() {
   
