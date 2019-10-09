@@ -62,6 +62,7 @@ akame()
 {
     int j,k[6],f;
     double P,b;
+    int CoolingRatio=2;
 
 
     P=0;
@@ -71,14 +72,9 @@ for (int i = 1; i < 6; i++)
   cout<<" flow =";
   cin>>f;
   cout<<endl;
-  cout<<"productivity modules?  1 for no   2 for all 4 mk3 productivity"<<endl;
-  cin>>b;
-  if (b!=1)
-  {
-      b=1.4;
-  }
 
-P=P+i*(1000-15)*1.5*b*f;
+
+P=P+i*(1000-15)*2*CoolingRatio*f;
 }
 
 cout<<"THE TOTAL POWER IS "<<P/1000<<" MW";
