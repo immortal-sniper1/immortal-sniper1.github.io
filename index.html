@@ -249,10 +249,12 @@ let aa2 = document.getElementById("a2");
 let aa3 = document.getElementById("a3");
 let aa4= document.getElementById("a4");
 let aa5 = document.getElementById("a5");
+let TurbineEfficiency = 2 ;
+let CoolingRatio = 2 ; 
 let powerOfFusionButton =  document.getElementById("FE_power");
 let powerOfFusionn =  document.getElementById("powerOFfusion");
 function powerr(p1, p2,tempp) {
-  return p1 * p2*1.5*2*(tempp-15);   
+  return p1 * p2*TurbineEfficiency*CoolingRatio*(tempp-15);   
 }
 powerOfFusionButton.addEventListener("click", function() {
   
