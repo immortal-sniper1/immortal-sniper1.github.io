@@ -31,6 +31,8 @@ hyurimaru()
 
     //(.59[fluid fuel value] * Effiency[of turbine] * 100 * (temp-15))/(1000[max fluid temp]-15[defualt fluid temp]
 };
+
+
 schaltear()  // normap py power
 {
     int i,temp,flow,T;
@@ -60,12 +62,13 @@ schaltear()  // normap py power
 
 akame()  // fusion
 {
-    int j,k[6],f;
-    double P,b;
+    int j,k[6],f,efficient;
+    double P,b,h[7];
     int CoolingRatio=2;
 
 
     P=0;
+    efficient=8;
 for (int i = 1; i < 6; i++)
 {
   cout<< "for the temperature of "<<i<<"000 C"<<endl;
@@ -73,11 +76,19 @@ for (int i = 1; i < 6; i++)
   cin>>f;
   cout<<endl;
 
-
-P=P+i*(1000-15)*6*CoolingRatio*f;
+h[i]=i*(1000-15)*efficient*CoolingRatio*f;
+P=P+h[i];
 }
 
 cout<<"THE TOTAL POWER IS "<<P/1000<<" MW";
+cout<<" "<<endl;
+cout<<" "<<endl;
+for (int i = 1; i < 6; i++)
+{
+  cout<< "for the temperature of "<<i<<"000 C the % is :";
+  b=h[i]/P*100;
+  cout<<b <<endl;
+}
 cin>>b;
 
 };
