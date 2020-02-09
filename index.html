@@ -192,7 +192,7 @@ fromPowerButton.addEventListener("click", function() {
     <th class="tg-v76b">2000&#176;C <img src="icons/fusion-dt.png"></th>
     <th class="tg-v76b">3000&#176;C <img src="icons/fusion-he3.png"></th>
     <th class="tg-v76b">4000&#176;C <img src="icons/fusion-bh.png"></th>
-    <th class="tg-in7a">5000&#176;C</th>
+    <th class="tg-in7a">5000&#176;C <img src="icons/fusion-antimatter.png"></th>
   </tr>
   <tr>
     <td class="tg-v76b">flow of critical steam</td>
@@ -202,6 +202,10 @@ fromPowerButton.addEventListener("click", function() {
     <td class="tg-v76b"><input id="f4" value="0">/[s]</td>
     <td class="tg-in7a"><input id="f5" value="0">/[s]</td>
   </tr>
+
+
+
+
   <tr>
     <td class="tg-v76b">productivity?<br></td>
     <td class="tg-v76b">  
@@ -229,10 +233,48 @@ fromPowerButton.addEventListener("click", function() {
         <option value="1">none </option>
       </select></td>
   </tr>
+
+
+
+  <tr>
+    <td class="tg-v76b">power made individualy<br></td>
+    <td class="tg-v76b">  
+
+    	wwww  <input id="powerOFfusion1" value="0">
+      
+      <br></td>
+    <td class="tg-v76b">
+          
+          qqqq <input id="powerOFfusion2" value="0">
+
+      </td>
+    <td class="tg-v76b">
+
+     aaaa <input id="powerOFfusion3" value="0">
+
+ </td>
+    <td class="tg-v76b">   
+      
+      zzzz <input id="powerOFfusion4" value="0">
+
+  </td>
+    <td class="tg-in7a">   
+      
+
+      fffff <input id="powerOFfusion5" value="0">
+
+  </td>
+  </tr>
+
+
+
+
   <tr>
     <td class="tg-v76b">power produced[MW]:</td>
     <td class="tg-v76b" colspan="5"><input id="powerOFfusion" value="0"><button id="FE_power">Go!</button></td>
   </tr>
+
+
 </table>
 
 
@@ -244,22 +286,42 @@ let ff2 = document.getElementById("f2");
 let ff3 = document.getElementById("f3");
 let ff4 = document.getElementById("f4");
 let ff5 = document.getElementById("f5");
+
+
 let aa1 = document.getElementById("a1");
 let aa2 = document.getElementById("a2");
 let aa3 = document.getElementById("a3");
 let aa4= document.getElementById("a4");
 let aa5 = document.getElementById("a5");
+
+
 let TurbineEfficiency = 8 ;
 let CoolingRatio = 2 ; 
 let powerOfFusionButton =  document.getElementById("FE_power");
 let powerOfFusionn =  document.getElementById("powerOFfusion");
+let powerOfFusionn =  document.getElementById("powerOFfusion1");
+let powerOfFusionn =  document.getElementById("powerOFfusion2");
+let powerOfFusionn =  document.getElementById("powerOFfusion3");
+let powerOfFusionn =  document.getElementById("powerOFfusion4");
+let powerOfFusionn =  document.getElementById("powerOFfusion5");
+
 function powerr(p1, p2,tempp) {
   return p1 * p2*TurbineEfficiency*CoolingRatio*(tempp-15);   
 }
+
+
 powerOfFusionButton.addEventListener("click", function() {
+
+powerOfFusionn1.value = powerr(ff1.value ,aa1.value ,1000)/1000;
+powerOfFusionn2.value = powerr(ff2.value ,aa2.value ,2000)/1000;
+powerOfFusionn3.value = powerr(ff3.value ,aa3.value ,3000)/1000;
+powerOfFusionn4.value = powerr(ff4.value ,aa4.value ,4000)/1000;
+powerOfFusionn5.value = powerr(ff5.value ,aa5.value ,5000)/1000;
+powerOfFusionn.value = powerOfFusionn1.value + powerOfFusionn2.value + powerOfFusionn3.value + powerOfFusionn4.value + powerOfFusionn5.value ;
   
-  let TotalPower = powerr(ff1.value ,aa1.value ,1000)+powerr(ff2.value ,aa2.value ,2000)+powerr(ff3.value ,aa3.value ,3000)+powerr(ff4.value ,aa4.value ,4000)+powerr(ff5.value ,aa5.value ,5000);
-  powerOfFusionn.value = TotalPower/1000;
+  //let TotalPower = powerr(ff1.value ,aa1.value ,1000)+powerr(ff2.value ,aa2.value ,2000)+powerr(ff3.value ,aa3.value ,3000)
+  //+powerr(ff4.value ,aa4.value ,4000)+powerr(ff5.value ,aa5.value ,5000);
+  //powerOfFusionn.value = TotalPower/1000;
 })
 
 </script>
