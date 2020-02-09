@@ -305,8 +305,8 @@ let powerOfFusionn =  document.getElementById("powerOFfusion3");
 let powerOfFusionn =  document.getElementById("powerOFfusion4");
 let powerOfFusionn =  document.getElementById("powerOFfusion5");
 
-function powerr(p1, p2,tempp) {
-  return p1 * p2*TurbineEfficiency*CoolingRatio*(tempp-15);   
+function powerr(flow, prodd, tempp) {
+  return flow* prodd* TurbineEfficiency* CoolingRatio* (tempp-15);   
 }
 
 
@@ -322,10 +322,11 @@ powerOfFusionn.value = powerOfFusionn1.value + powerOfFusionn2.value + powerOfFu
   //let TotalPower = powerr(ff1.value ,aa1.value ,1000)+powerr(ff2.value ,aa2.value ,2000)+powerr(ff3.value ,aa3.value ,3000)
   //+powerr(ff4.value ,aa4.value ,4000)+powerr(ff5.value ,aa5.value ,5000);
   //powerOfFusionn.value = TotalPower/1000;
+
+
 })
 
 </script>
-
 
 </body>
 </html> 
