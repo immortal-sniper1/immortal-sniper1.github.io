@@ -237,32 +237,41 @@ fromPowerButton.addEventListener("click", function() {
 
 
   <tr>
-    <td class="tg-v76b">power made individualy<br></td>
+    <td class="tg-v76b">power made individualy[MW]<br></td>
     <td class="tg-v76b">  
-
-    	wwww  <input id="powerOFfusion1" value="0">
-      
+    	   <input id="powerOFfusion1" value="0">    
       <br></td>
-    <td class="tg-v76b">
-          
-          qqqq <input id="powerOFfusion2" value="0">
-
+    <td class="tg-v76b">          
+           <input id="powerOFfusion2" value="0">
       </td>
     <td class="tg-v76b">
-
-     aaaa <input id="powerOFfusion3" value="0">
-
+           <input id="powerOFfusion3" value="0">
  </td>
-    <td class="tg-v76b">   
-      
-      zzzz <input id="powerOFfusion4" value="0">
-
+    <td class="tg-v76b">        
+           <input id="powerOFfusion4" value="0">
   </td>
     <td class="tg-in7a">   
-      
+           <input id="powerOFfusion5" value="0">
+  </td>
+  </tr>
 
-      fffff <input id="powerOFfusion5" value="0">
 
+    <tr>
+    <td class="tg-v76b">power % individualy<br></td>
+    <td class="tg-v76b">  
+    	   <input id="powerOfFusionn1a" value="0">    
+      <br></td>
+    <td class="tg-v76b">          
+           <input id="powerOFfusionn2a" value="0">
+      </td>
+    <td class="tg-v76b">
+           <input id="powerOFfusionn3a" value="0">
+ </td>
+    <td class="tg-v76b">        
+           <input id="powerOFfusionn4a" value="0">
+  </td>
+    <td class="tg-in7a">   
+           <input id="powerOFfusionn5a" value="0">
   </td>
   </tr>
 
@@ -291,19 +300,25 @@ let ff5 = document.getElementById("f5");
 let aa1 = document.getElementById("a1");
 let aa2 = document.getElementById("a2");
 let aa3 = document.getElementById("a3");
-let aa4= document.getElementById("a4");
+let aa4 = document.getElementById("a4");
 let aa5 = document.getElementById("a5");
 
 
 let TurbineEfficiency = 8 ;
 let CoolingRatio = 2 ; 
 let powerOfFusionButton =  document.getElementById("FE_power");
-let powerOfFusionn =  document.getElementById("powerOFfusion");
-let powerOfFusionn =  document.getElementById("powerOFfusion1");
-let powerOfFusionn =  document.getElementById("powerOFfusion2");
-let powerOfFusionn =  document.getElementById("powerOFfusion3");
-let powerOfFusionn =  document.getElementById("powerOFfusion4");
-let powerOfFusionn =  document.getElementById("powerOFfusion5");
+let powerOfFusionn  =  document.getElementById("powerOFfusion");
+let powerOfFusionn1 =  document.getElementById("powerOFfusion1");
+let powerOfFusionn2 =  document.getElementById("powerOFfusion2");
+let powerOfFusionn3 =  document.getElementById("powerOFfusion3");
+let powerOfFusionn4 =  document.getElementById("powerOFfusion4");
+let powerOfFusionn5 =  document.getElementById("powerOFfusion5");
+
+let powerOfFusionn1a =  document.getElementById("powerOFfusionn1a");
+let powerOfFusionn2a =  document.getElementById("powerOFfusionn2a");
+let powerOfFusionn3a =  document.getElementById("powerOFfusionn3a");
+let powerOfFusionn4a =  document.getElementById("powerOFfusionn4a");
+let powerOfFusionn5a =  document.getElementById("powerOFfusionn5a");
 
 function powerr(flow, prodd, tempp) {
   return flow* prodd* TurbineEfficiency* CoolingRatio* (tempp-15);   
@@ -317,11 +332,18 @@ powerOfFusionn2.value = powerr(ff2.value ,aa2.value ,2000)/1000;
 powerOfFusionn3.value = powerr(ff3.value ,aa3.value ,3000)/1000;
 powerOfFusionn4.value = powerr(ff4.value ,aa4.value ,4000)/1000;
 powerOfFusionn5.value = powerr(ff5.value ,aa5.value ,5000)/1000;
+
 powerOfFusionn.value = powerOfFusionn1.value + powerOfFusionn2.value + powerOfFusionn3.value + powerOfFusionn4.value + powerOfFusionn5.value ;
+
+ powerOfFusionn1a.value =  powerOfFusion1.value / powerOFfusion.value *100  ;
+ powerOfFusionn2a.value =  powerOfFusion2.value / powerOFfusion.value *100  ;
+ powerOfFusionn3a.value =  powerOfFusion3.value / powerOFfusion.value *100  ;
+ powerOfFusionn4a.value =  powerOfFusion4.value / powerOFfusion.value *100  ;
+ powerOfFusionn5a.value =  powerOfFusion5.value / powerOFfusion.value *100  ;
   
-  //let TotalPower = powerr(ff1.value ,aa1.value ,1000)+powerr(ff2.value ,aa2.value ,2000)+powerr(ff3.value ,aa3.value ,3000)
-  //+powerr(ff4.value ,aa4.value ,4000)+powerr(ff5.value ,aa5.value ,5000);
-  //powerOfFusionn.value = TotalPower/1000;
+//let TotalPower = powerr(ff1.value ,aa1.value ,1000)+powerr(ff2.value ,aa2.value ,2000)+powerr(ff3.value ,aa3.value ,3000)
+  //                +powerr(ff4.value ,aa4.value ,4000)+powerr(ff5.value ,aa5.value ,5000);
+ //   powerOfFusionn.value = TotalPower.value/1000;
 
 
 })
